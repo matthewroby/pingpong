@@ -18,7 +18,7 @@ The framework of the app already allows users to register and sign in. Your task
 
 ## Requirements
 
-Time alotted: 4 hours. 
+Time alotted: 4 hours.
 Mark your start and end times with your commits.
 
 Add all necessary migrations, models (with relationships, methods and validations), controllers, and tests.
