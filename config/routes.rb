@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: "home#index"
   get '/history', to: 'home#history'
   get '/log',     to: 'home#log'
+  resources :games
 end

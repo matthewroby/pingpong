@@ -7,7 +7,7 @@ class CreateGames < ActiveRecord::Migration
       t.integer :player_1_score, :default => 0
       t.integer :player_2_score, :default => 0
       t.integer :winner_id, index: true
-      t.datetime :played_at, null: false
+      t.datetime :played_at, null: false, default: 'now()'
 
       t.timestamps null: false
     end

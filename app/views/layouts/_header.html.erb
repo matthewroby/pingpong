@@ -13,7 +13,7 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <%= link_to 'Log Game', '/log', class: 'btn btn-success navbar-btn' %>
+      <%= link_to 'Log Game', new_game_path, class: 'btn btn-success navbar-btn' %>
       <ul class="nav navbar-nav">
         <% if user_signed_in? %>
           <li><%= link_to 'Leadboard', root_path %></li>

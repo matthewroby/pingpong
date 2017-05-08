@@ -1,5 +1,48 @@
 <h1 class='page-header'>Leaderboard</h1>
 
-<div class="alert alert-warning" role="alert">This is a sample page.</div>
+<!-- <div class="alert alert-warning" role="alert">tdis is a sample page.</div> -->
 
-<%= image_tag('leaderboard.png') %>
+<%#= image_tag('leaderboard.png') %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Name</th>
+      <th>Score</th>
+      <th>Games Played</th>
+      <th>Games Won</th>
+      <th>Games lost</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% r = 0 %>
+    <% @users.each do |user| %>
+      <% unless user.games_played.count == 0 %>
+        <tr>
+          <td><strong><%= r += 1 %></strong></td>
+          <td><strong><%= "#{user.fullname}" %></strong></td>
+          <td><%= user.total_points %></td>
+          <td><%= user.games_played.count %></td>
+          <td><%= user.games_won.count %></td>
+          <td><%= user.games_lost.count %></td>
+          <td><%= mail_to(user.email, "Challenge!", :subject => "I challenge you to PINGPONG!", :body => "Hi #{user.first_name}, Let me know when you want to play - I am ready!", :class => "btn btn-primary btn-xs") %></td>
+        </tr>
+      <% end %>
+    <% end %>
+    <% @users.each do |user| %>
+      <% unless user.games_played.count > 0 %>
+        <tr class="text-muted">
+          <td> - </td>
+          <td><strong><%= "#{user.fullname}" %></strong></td>
+          <td> - </td>
+          <td> - </td>
+          <td> - </td>
+          <td> - </td>
+          <td><%= mail_to(user.email, "Challenge!", :subject => "I challenge you to PINGPONG!", :body => "Hi #{user.first_name}, Let me know when you want to play - I am ready!", :class => "btn btn-primary btn-xs") %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

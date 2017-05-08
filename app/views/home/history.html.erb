@@ -1,5 +1,25 @@
-<h1 class='page-header'>History</h1>
+<h1 class='page-header'>Your Game History</h1>
 
-<div class="alert alert-warning" role="alert">This is a sample page. Replace link in the header with your own.</div>
+<!-- <div class="alert alert-warning" role="alert">This is a sample page. Replace link in the header with your own.</div> -->
 
-<%= image_tag('history.png') %>
+<%#= image_tag('history.png') %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Opponent</th>
+      <th>Score</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @games.each do |game| %>
+      <tr class="<%= game.winner == current_user ? "text-success" : "text-danger"  %>">
+        <td><%= game.played_at.strftime("%a %d %b, %Y %H:%M") %></td>
+        <td><%= game.player_1 != current_user ? "#{game.player_1.first_name} #{game.player_1.last_name}" : "#{game.player_2.first_name} #{game.player_2.last_name}" %></td>
+        <td><%= game.player_1_score > game.player_2_score ? "#{game.player_1_score} - #{game.player_2_score}" : "#{game.player_2_score} - #{game.player_1_score}" %></td>
+        <td><%= game.winner == current_user ? "W" : "L" %></td>
+      </tr>
+    <% end %>
+  </tbody>
