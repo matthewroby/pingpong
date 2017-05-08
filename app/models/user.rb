@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   def total_points
     total = 0
     self.games_played.each do |game|
-      game.player_1 == self.id ? total += game.player_1_score : total += game.player_2_score
+      game.player_1_id == self.id ? total += game.player_1_score : total += game.player_2_score
     end
     return total
   end

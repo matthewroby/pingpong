@@ -68,7 +68,7 @@ class Game < ActiveRecord::Base
 
   # update the rankings of the players
   def update_player_ratings
-    result = self.player_1 == self.winner_of_game ? 1 : 0
+    result = self.player_1 == self.winner_of_game ? 0 : 1
     player_1_new_rating = self.player_1.rating + (32*(result - self.player_1.expected_score_against(self.player_2)))
     player_2_new_rating = self.player_2.rating + (32*((1 - result) - self.player_2.expected_score_against(self.player_1)))
 
