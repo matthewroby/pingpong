@@ -1,0 +1,22 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  first_name: SomeGuy1
+  last_name: MyString
+  email: player1@playing.com
+  rating: 1000
+
+two:
+  id: 2
+  first_name: SomeGuy2
+  last_name: MyString
+  email: player2@playing.com
+  rating: 1000
+
+two:
+  id: 3
+  first_name: SomeGuy3
+  last_name: MyString
+  email: player3@playing.com
+  rating: 1000

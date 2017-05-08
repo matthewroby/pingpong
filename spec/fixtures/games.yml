@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  user_id: 3
+  player_1_id: 2
+  player_2_id: 1
+  player_1_score: 4
+  player_2_score: 21
+  played_at: <%=  Time.now - 12.hours %>
+  winner_id: 2
+
+two:
+  id: 2
+  user_id: 3
+  player_1_id: 1
+  player_2_id: 3
+  player_1_score: 12
+  player_2_score: 21
+  played_at: <%= Time.now - 10.hours %>
+  winner_id: 2
+
+three:
+  id: 3
+  user_id: 3
+  player_1_id: 1
+  player_2_id: 2
+  player_1_score: 21
+  player_2_score: 12
+  played_at: <%= Time.now - 6.hours %>
+  winner_id: 1
